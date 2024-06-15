@@ -1,46 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./output.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+  <head id="header"> </head>
   <body
     class="flex flex-col justify-between w-full min-h-screen h-screen font-roboto"
   >
-    <nav
-      class="bg-black w-full h-[56px] flex items-center px-32 text-white justify-between"
-    >
-      <div class="text-white">IMDB ICON</div>
-
-      <a class="flex flex-row gap-2 items-center hover:text-yellow-500" href="">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          class="bi bi-person-circle"
-          viewBox="0 0 16 16"
-        >
-          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-          <path
-            fill-rule="evenodd"
-            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
-          />
-        </svg>
-        <span> Profile </span>
-      </a>
-    </nav>
+    <nav id="navbar"></nav>
 
     <main class="bg-gradient-to-t w-full h-full from-gray-400 px-48">
       <div class="bg-white w-full h-full">
-        <div class="bg-gray-200 border border-gray-300 border-2 p-4">
+        <div class="bg-gray-200 border border-gray-300 border-2 p-4 h-16">
           <h1 class="sm:text-sm text-xl font-bold">Cadastre um Filme</h1>
         </div>
         <div class="px-32 py-16">
@@ -72,4 +40,20 @@
       </div>
     </main>
   </body>
+  <script>
+    fetch("header.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("header").innerHTML = data;
+      })
+      .catch((error) => console.error("Erro ao carregar header.html:", error));
+  </script>
+  <script>
+    fetch("nav.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("navbar").innerHTML = data;
+      })
+      .catch((error) => console.error("Erro ao carregar nav.html:", error));
+  </script>
 </html>
