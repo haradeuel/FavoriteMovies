@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Favorite Movies | Adicionar</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./output.css" rel="stylesheet" />
@@ -25,7 +26,7 @@
     <nav
       class="bg-black w-full h-[56px] flex items-center px-32 text-white justify-between"
     >
-      <div class="text-white">IMDB ICON</div>
+      <div class="text-white text-yellow-400">Favorite Movies</div>
       <a class="flex flex-row gap-2 items-center hover:text-yellow-500" href="">
         <i class="bi bi-person-circle"></i>
         <span> Profile </span>
@@ -35,8 +36,8 @@
 
     <main class="bg-gradient-to-t w-full h-full from-gray-400 px-48">
       <div class="bg-white w-full h-full">
-        <div class="bg-gray-200 border border-gray-300 border-2 p-4 h-16">
-          <h1 class="sm:text-sm text-xl font-bold">Cadastre um Filme</h1>
+        <div class="bg-gray-100   p-4 h-16">
+          <h1 class=" text-xl focus-within:text-black ">Cadastre um Filme</h1>
         </div>
         <div class="px-32 py-16">
           <form class="flex flex-col gap-4">
@@ -45,7 +46,7 @@
               <input
                 id="name"
                 type="text"
-                class="border border-gray-400 rounded-sm px-2"
+                class="border border-gray-400 rounded-sm p-2  border focus:border-yellow-600 focus:outline-none focus:border-4"
                 placeholder="Nome do filme"
               />
 
@@ -59,7 +60,7 @@
 
               <textarea
                 id="description"
-                class="border border-gray-400 rounded-sm px-2 h-40"
+                class="border border-gray-400 rounded-sm px-2 h-40 border focus:border-yellow-600 focus:outline-none focus:border-4"
                 placeholder="Descrição do filme"
               ></textarea>
 
@@ -73,7 +74,7 @@
             <div class="flex flex-row justify-end w-full h-fit">
               <button
                 id="add-button"
-                class="bg-black text-white w-32 p-2 rounded-sm"
+                class="bg-black text-yellow-300 w-32 p-2 rounded"
               >
                 Adicionar
               </button>
