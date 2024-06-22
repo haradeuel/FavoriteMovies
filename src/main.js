@@ -2,6 +2,9 @@ $(document).ready(function () {
   $("#add-button").on("click", function (event) {
     event.preventDefault();
 
+    $(this).prop("disabled", true);
+    $(this).addClass("opacity-50 cursor-not-allowed");
+
     let isNameValid = false;
     let isRatingValid = false;
     let isDescriptionValid = false;
@@ -52,5 +55,8 @@ $(document).ready(function () {
         },
       });
     }
+
+    $(this).prop("disabled", false);
+    $(this).removeClass("opacity-50 cursor-not-allowed");
   });
 });

@@ -1,15 +1,3 @@
 {
-  "movies": [
-    {
-      "name": "A Origem",
-      "description": "Um ladrão que rouba segredos corporativos por meio do uso da tecnologia de compartilhamento de sonhos, recebe a tarefa inversa de plantar uma ideia na mente de um Diretor Executivo.",
-      "rating": "0"
-    },
-    {
-      "id": "dd02",
-      "name": "Pulp Fiction",
-      "description": "Doidera",
-      "rating": "6"
-    }
-  ]
+  "movies": []
 }
