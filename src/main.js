@@ -26,10 +26,17 @@ $(document).ready(function () {
       isValid = true;
     }
 
-    if(isValid){
-        console.log("Válido");
+    if (isValid) {
+      console.log("Válido");
 
-        window.location.href="lista_filmes.html";
+      $.ajax({
+        method: "POST",
+        url: "http://localhost:3000/movies",
+        data: JSON.stringify({ name, description }),
+        success: function () {
+          window.location.href = "lista_filmes.html";
+        },
+      });
     }
 
     console.log(name);
