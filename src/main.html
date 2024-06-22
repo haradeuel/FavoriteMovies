@@ -54,12 +54,27 @@
               />
 
               <span id="name_error" class="invisible text-red-600 text-sm">
-                Por favor preencha esse campo
+                O Nome é obrigatório.
               </span>
             </div>
 
             <div class="flex flex-col gap-2">
-              <label for="description"> Descrição </label>
+              <label for="rating">Nota (0 a 10)</label>
+
+              <input
+                id="rating"
+                type="number"
+                value="0"
+                class="border border-gray-400 rounded-sm p-2 border focus:border-yellow-600 focus:outline-none focus:border-4"
+              />
+
+              <span id="rating_error" class="invisible text-red-600 text-sm">
+                A Nota deve ser de 0 a 10.
+              </span>
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <label for="description">Descrição</label>
 
               <textarea
                 id="description"
@@ -71,7 +86,7 @@
                 id="description_error"
                 class="invisible text-red-600 text-sm"
               >
-                Por favor preencha esse campo.
+                A Descrição é obrigatória.
               </span>
             </div>
             <div class="flex flex-row justify-end">

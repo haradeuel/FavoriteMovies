@@ -9,11 +9,14 @@ $(document).ready(function () {
                 <h2 class="text-xl">${movie.name}</h2>  
             </div>
 
+            <div class="">
+                <h2 class="text-xl">${movie.rating ?? "Sem Nota"}</h2>
+            </div>    
+
             <div class="500">
                 <p>${movie.description}</p>
             </div>
         </div>
-
       `);
     });
   });
