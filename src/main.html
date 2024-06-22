@@ -24,25 +24,28 @@
   </head>
   <body>
     <nav
-      class="bg-black w-full h-[56px] flex items-center px-32 text-white justify-between"
+      class="bg-black w-full h-[56px] flex items-center px-3 text-white justify-between"
     >
       <div class="text-white text-yellow-400">Favorite Movies</div>
-      <a class="flex flex-row gap-2 items-center hover:text-yellow-500" href="">
+
+      <a class="flex flex-row gap-2 items-center hover:text-yellow-500">
         <span>
           <a href="lista_filmes.html">Listagem</a>
         </span>
       </a>
     </nav>
 
-    <main class="bg-gradient-to-t w-full h-full from-gray-400 px-48">
-      <div class="bg-white w-full h-full">
+    <main class="bg-gradient-to-t from-gray-400">
+      <div class="bg-white">
         <div class="bg-gray-100 p-4 h-16">
           <h1 class="text-xl focus-within:text-black">Cadastre um Filme</h1>
         </div>
-        <div class="px-32 py-16">
-          <form class="flex flex-col gap-4">
+
+        <div class="py-8">
+          <form class="px-10">
             <div class="flex flex-col gap-2">
-              <label for="name"> Nome </label>
+              <label for="name">Nome</label>
+
               <input
                 id="name"
                 type="text"
@@ -51,12 +54,27 @@
               />
 
               <span id="name_error" class="invisible text-red-600 text-sm">
-                Por favor preencha esse campo
+                O Nome é obrigatório.
               </span>
             </div>
 
             <div class="flex flex-col gap-2">
-              <label for="description"> Descrição </label>
+              <label for="rating">Nota (0 a 10)</label>
+
+              <input
+                id="rating"
+                type="number"
+                value="0"
+                class="border border-gray-400 rounded-sm p-2 border focus:border-yellow-600 focus:outline-none focus:border-4"
+              />
+
+              <span id="rating_error" class="invisible text-red-600 text-sm">
+                A Nota deve ser de 0 a 10.
+              </span>
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <label for="description">Descrição</label>
 
               <textarea
                 id="description"
@@ -68,10 +86,10 @@
                 id="description_error"
                 class="invisible text-red-600 text-sm"
               >
-                Por favor preencha esse campo.
+                A Descrição é obrigatória.
               </span>
             </div>
-            <div class="flex flex-row justify-end w-full h-fit">
+            <div class="flex flex-row justify-end">
               <button
                 id="add-button"
                 class="bg-black text-yellow-300 w-32 p-2 rounded"

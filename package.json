@@ -4,7 +4,8 @@
   "description": "Simple Clone IMDb",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node src/server.js"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +13,7 @@
   "dependencies": {
     "bootstrap-icons": "^1.11.3",
     "jquery": "^3.7.1",
+    "json-server": "^1.0.0-beta.1",
     "xyz": "^5.0.0"
   },
   "devDependencies": {
