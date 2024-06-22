@@ -39,3 +39,13 @@ https://www.figma.com/file/d5Txza3oQwtU4I2Qa21cqL/IMDB-Design?type=design&node-i
 #### RA5 - Efetuar requisições assíncronas para uma API fake e APIs públicas, permitindo a obtenção e manipulação de dados dinamicamente.
 - [ ] ID 22 - Realiza requisições assíncronas para APIs públicas, utilizando adequadamente conceitos como AJAX, Fetch API ou bibliotecas, para obter dados dinâmicos e realizar a manipulação e exibição dos resultados na página web.
 - [ ] ID 23 - Realiza requisições assíncronas para uma API fake utilizando adequadamente conceitos como AJAX, Fetch API ou bibliotecas, para manipular dados e exibição dos resultados na página web.
+
+
+
+# Para rodar o projeto
+
+Rodar o Json server
+
+```bash
+ npx json-server src/db.json
+```
