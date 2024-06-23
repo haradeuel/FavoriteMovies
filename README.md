@@ -10,6 +10,11 @@ https://haradeuel.github.io/favorite-movies/
 
 https://www.figma.com/file/d5Txza3oQwtU4I2Qa21cqL/IMDB-Design?type=design&node-id=4%3A1097&mode=dev&t=FiS2ejW0tI9yKdQP-1
 
+# Link Vídeo Explicação 
+
+https://youtu.be/C-ntDl-gE7g
+
+
 ## Checklist | Indicadores de Desempenho (ID) dos Resultados de Aprendizagem (RA)
 
 #### RA1 - Utilizar Frameworks CSS para estilização de elementos HTML e criação de layouts responsivos.
