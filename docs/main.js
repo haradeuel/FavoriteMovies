@@ -48,11 +48,10 @@ $(document).ready(function () {
     if (isValid) {
       $.ajax({
         method: "POST",
-        url: "https://66775c58145714a1bd748a79.mockapi.io/movies/movie",
+        url: "https://66776a33145714a1bd74af8c.mockapi.io/movie/movie",
         headers: {
           "Content-Type": "application/json",
           "X_Jsio-Token": "217d9982b6e36f225a5e9e7566a47233",
-          "Access-Control-Allow-Origin": "*"
         },
         data: JSON.stringify({ name, description, rating }),
         success: function (response) {

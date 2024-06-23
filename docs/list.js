@@ -7,7 +7,7 @@ $(document).ready(function () {
   });
 
   // When the document is ready, execute the function
-  $.get("https://66775c58145714a1bd748a79.mockapi.io/movies/movie", function (movies) {
+  $.get("https://66776a33145714a1bd74af8c.mockapi.io/movie/movie", function (movies) {
     console.log(JSON.stringify(movies))
     // Hide the loading indicator
     $("#loading").hide();
@@ -47,7 +47,7 @@ $(document).ready(function () {
       $(`#remove-${movie.id}`).on("click", function () {
         $.ajax({
           method: "DELETE",
-          url: `https://66775c58145714a1bd748a79.mockapi.io/movies/movie/${movie.id}`,
+          url: `https://66776a33145714a1bd74af8c.mockapi.io/movie/movie/${movie.id}`,
           success: function () {
             $(`#remove-${movie.id}`).closest('.max-w-sm').remove(); // Remove the movie element from the DOM
           },
