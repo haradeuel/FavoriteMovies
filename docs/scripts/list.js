@@ -26,7 +26,7 @@ $(document).ready(function () {
     movies.forEach(function (movie) {
       // Iterate over each movie returned by the request
       list.append(`
-        <div class="max-w-sm w-full max-w-full mb-5">
+        <div class="w-full max-w-full mb-5">
           <div class="border-r border-b border border-gray-400 bg-white rounded p-4 flex flex-col justify-between leading-normal">
             <div class="mb-8">
               <div class="flex justify-between">
