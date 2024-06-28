@@ -1,4 +1,15 @@
 $(document).ready(function () {
+  // Check localStorage for address data
+  const addressData = localStorage.getItem("address");
+  if (addressData) {
+    // Address data exists, hide the address form and checkbox question
+    $("#address-form").addClass("hidden");
+    $("#receber-cartas").prop("checked", false); // Ensure checkbox is unchecked
+  } else {
+    // Address data doesn't exist, show the address form and checkbox question
+    $("#address-form").removeClass("hidden");
+  }
+
   // Handle checkbox change event
   $("#receber-cartas").on("change", function () {
     if ($(this).is(":checked")) {
@@ -91,6 +102,30 @@ $(document).ready(function () {
     if (isValid) {
       // If checkbox is checked, proceed with form submission
       if ($("#receber-cartas").is(":checked")) {
+        // Simulate form submission (replace with actual AJAX call)
+        $.ajax({
+          method: "POST",
+          url: "https://66776a33145714a1bd74af8c.mockapi.io/movie/movie",
+          headers: {
+            "Content-Type": "application/json",
+            "X_Jsio-Token": "217d9982b6e36f225a5e9e7566a47233",
+          },
+          data: JSON.stringify({ name, description, rating }),
+          success: function (response) {
+            // Redirect to movie list page after successful submission
+            window.location.replace("lista_filmes.html");
+          },
+          error: function () {
+            alert("Erro ao adicionar filme. Por favor, tente novamente.");
+          },
+          complete: function () {
+            // Enable button after submission completes
+            $("#add-button").prop("disabled", false);
+            $("#add-button").removeClass("opacity-50 cursor-not-allowed");
+          },
+        });
+      } else {
+        // Submit form without address data
         // Simulate form submission (replace with actual AJAX call)
         $.ajax({
           method: "POST",

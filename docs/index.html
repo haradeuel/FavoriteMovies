@@ -1,137 +1,156 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Favorite Movies | Adicionar</title>
-  <link href="./output.css" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-</head>
-<body class="bg-gradient-to-t from-gray-400">
-  <nav class="bg-black w-full h-12 flex items-center px-3 text-white justify-between">
-    <div class="text-yellow-400">Favorite Movies</div>
-    <a href="lista_filmes.html" class="flex flex-row gap-2 items-center hover:text-yellow-500">
-      <span>Listagem</span>
-    </a>
-  </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favorite Movies | Adicionar</title>
+    <link href="./output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gradient-to-t from-gray-400">
+    <nav
+      class="bg-gray-900 w-full h-12 flex items-center px-3 text-white justify-between"
+    >
+      <div class="text-yellow-300">Favorite Movies</div>
+      <a
+        href="lista_filmes.html"
+        class="flex flex-row gap-2 items-center hover:text-gray-900 hover:bg-yellow-300 p-2 rounded-lg"
+      >
+        <span>Listagem</span>
+      </a>
+    </nav>
 
-  <main class="bg-gradient-to-t from-gray-400">
-    <div class="bg-white">
-      <div class="bg-gray-100 p-4 h-16">
-        <h1 class="text-xl focus-within:text-black">Cadastre um Filme</h1>
+    <main class="bg-gradient-to-t from-gray-400">
+      <div class="bg-white">
+        <div class="bg-gray-100 p-4 h-16">
+          <h1 class="text-xl focus-within:text-gray-900">Cadastre um Filme</h1>
+        </div>
+
+        <div class="py-8">
+          <form id="movieForm" class="px-10">
+            <div class="flex flex-col gap-2">
+              <label for="name">Nome</label>
+              <input
+                id="name"
+                type="text"
+                class="border border-gray-400 rounded-sm p-2 focus:border-yellow-300 focus:outline-none focus:border-4"
+                placeholder="Nome do filme"
+                pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]*"
+                title="Please enter a valid name using letters and spaces only"
+                required
+              />
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <label for="rating">Nota (0 a 10)</label>
+              <input
+                id="rating"
+                type="number"
+                value="0"
+                class="border border-gray-400 rounded-sm p-2 focus:border-yellow-300 focus:outline-none focus:border-4"
+              />
+              <span id="rating_error" class="invisible text-red-600 text-sm">
+                A Nota deve ser de 0 a 10.
+              </span>
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <label for="description">Descrição</label>
+              <textarea
+                id="description"
+                class="border border-gray-400 rounded-sm px-2 h-40 focus:border-yellow-300 focus:outline-none focus:border-4"
+                placeholder="Descrição do filme"
+              ></textarea>
+              <span
+                id="description_error"
+                class="invisible text-red-600 text-sm"
+              >
+                A Descrição é obrigatória.
+              </span>
+            </div>
+
+            <!-- Address Form Section -->
+            <div class="flex flex-col gap-2 mt-4">
+              <label class="inline-flex items-center">
+                <input
+                  type="checkbox"
+                  id="receber-cartas"
+                  class="form-checkbox h-5 w-5 text-yellow-300"
+                />
+                <span class="ml-2 text-gray-700"
+                  >Receber cartas semanais sobre novidades de filmes</span
+                >
+              </label>
+            </div>
+
+            <div id="address-form" class="mt-6 hidden">
+              <div class="flex flex-col gap-2">
+                <label for="cep">CEP</label>
+                <input
+                  id="cep"
+                  type="text"
+                  name="cep"
+                  class="border border-gray-400 rounded-sm p-2 focus:border-yellow-300 focus:outline-none focus:border-4"
+                  placeholder="Digite seu CEP"
+                  maxlength="8"
+                />
+              </div>
+
+              <div class="flex flex-col gap-2">
+                <label for="logradouro">Logradouro</label>
+                <input
+                  id="logradouro"
+                  type="text"
+                  class="border border-gray-400 rounded-sm p-2 focus:border-yellow-300 focus:outline-none focus:border-4"
+                  readonly
+                />
+              </div>
+
+              <div class="flex flex-col gap-2">
+                <label for="localidade">Localidade</label>
+                <input
+                  id="localidade"
+                  type="text"
+                  class="border border-gray-400 rounded-sm p-2 focus:border-yellow-300 focus:outline-none focus:border-4"
+                  readonly
+                />
+              </div>
+            </div>
+
+            <div class="flex justify-end mt-6">
+              <button
+                id="add-button"
+                class="bg-gray-900 text-yellow-300 w-32 p-2 rounded hover:text-gray-900 hover:bg-yellow-300"
+              >
+                Adicionar
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
+    </main>
 
-      <div class="py-8">
-        <form id="movieForm" class="px-10">
-          <div class="flex flex-col gap-2">
-            <label for="name">Nome</label>
-            <input
-              id="name"
-              type="text"
-              class="border border-gray-400 rounded-sm p-2 focus:border-yellow-600 focus:outline-none focus:border-4"
-              placeholder="Nome do filme"
-              pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]*"
-              title="Please enter a valid name using letters and spaces only"
-              required
-            />
-          </div>
-
-          <div class="flex flex-col gap-2">
-            <label for="rating">Nota (0 a 10)</label>
-            <input
-              id="rating"
-              type="number"
-              value="0"
-              class="border border-gray-400 rounded-sm p-2 focus:border-yellow-600 focus:outline-none focus:border-4"
-            />
-            <span id="rating_error" class="invisible text-red-600 text-sm">
-              A Nota deve ser de 0 a 10.
-            </span>
-          </div>
-
-          <div class="flex flex-col gap-2">
-            <label for="description">Descrição</label>
-            <textarea
-              id="description"
-              class="border border-gray-400 rounded-sm px-2 h-40 focus:border-yellow-600 focus:outline-none focus:border-4"
-              placeholder="Descrição do filme"
-            ></textarea>
-            <span id="description_error" class="invisible text-red-600 text-sm">
-              A Descrição é obrigatória.
-            </span>
-          </div>
-
-          <!-- Address Form Section -->
-          <div class="flex flex-col gap-2 mt-4">
-            <label class="inline-flex items-center">
-              <input
-                type="checkbox"
-                id="receber-cartas"
-                class="form-checkbox h-5 w-5 text-yellow-600"
-              />
-              <span class="ml-2 text-gray-700">Receber cartas semanais sobre novidades de filmes</span>
-            </label>
-          </div>
-
-          <div id="address-form" class="mt-6 hidden">
-            <div class="flex flex-col gap-2">
-              <label for="cep">CEP</label>
-              <input
-                id="cep"
-                type="text"
-                name="cep"
-                class="border border-gray-400 rounded-sm p-2 focus:border-yellow-600 focus:outline-none focus:border-4"
-                placeholder="Digite seu CEP"
-                maxlength="8"
-              />
-            </div>
-
-            <div class="flex flex-col gap-2">
-              <label for="logradouro">Logradouro</label>
-              <input
-                id="logradouro"
-                type="text"
-                class="border border-gray-400 rounded-sm p-2 focus:border-yellow-600 focus:outline-none focus:border-4"
-                readonly
-              />
-            </div>
-
-            <div class="flex flex-col gap-2">
-              <label for="localidade">Localidade</label>
-              <input
-                id="localidade"
-                type="text"
-                class="border border-gray-400 rounded-sm p-2 focus:border-yellow-600 focus:outline-none focus:border-4"
-                readonly
-              />
-            </div>
-          </div>
-
-          <div class="flex justify-end mt-6">
-            <button
-              id="add-button"
-              class="bg-black text-yellow-300 w-32 p-2 rounded"
-            >
-              Adicionar
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </main>
-
-  <!-- JavaScript imports -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="./scripts/jquery.mask.js"></script>
-  <script src="./scripts/main.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function () {
-      $("#cep").mask("00.000-000");
-    });
-  </script>
-</body>
+    <!-- JavaScript imports -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./scripts/jquery.mask.js"></script>
+    <script src="./scripts/main.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#cep").mask("00.000-000");
+      });
+    </script>
+  </body>
 </html>
