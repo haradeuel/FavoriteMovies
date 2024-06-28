@@ -13,6 +13,7 @@
   "dependencies": {
     "bootstrap-icons": "^1.11.3",
     "jquery": "^3.7.1",
+    "jquery-mask-plugin": "^1.14.16",
     "json-server": "^1.0.0-beta.1",
     "xyz": "^5.0.0"
   },

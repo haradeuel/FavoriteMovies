@@ -78,3 +78,27 @@ $(document).ready(function () {
     $(this).removeClass("opacity-50 cursor-not-allowed");
   });
 });
+
+$(document).ready(function () {
+  $("#cep").on("change", function () {
+    var cep = $(this).val().replace(/\D/g, "");
+    if (cep.length != 8) {
+      alert("CEP inválido. Por favor, digite um CEP válido.");
+      return;
+    }
+    $.getJSON(`https://viacep.com.br/ws/${cep}/json/`, function (data) {
+      if (!("erro" in data)) {
+        $("#logradouro").val(data.logradouro);
+        $("#localidade").val(data.localidade);
+      } else {
+        alert("CEP não encontrado.");
+      }
+    });
+  });
+
+  $("#add-button").on("click", function (event) {
+    event.preventDefault();
+    // Handle form submission or any other logic here
+    console.log("Form submission logic goes here.");
+  });
+});
