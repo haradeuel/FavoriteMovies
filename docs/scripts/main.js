@@ -13,9 +13,17 @@ $(document).ready(function () {
     const description = $("#description").val().trim();
     const rating = $("#rating").val();
 
-    if (name === "") {
+    // Regex patterns for validation
+    const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/; // Allows letters and spaces
+    const ratingRegex = /^(?:10|\d(?:\.\d)?)$/; // Allows ratings from 0 to 10 with optional decimal
+    const descriptionRegex = /.+/; // Allows any non-empty description
+
+    // Validate name
+    if (name === "" || !nameRegex.test(name)) {
       $("#name").addClass("border-red-500");
-      $("#name_error").removeClass("invisible");
+      $("#name_error")
+        .removeClass("invisible")
+        .text("O campo não pode ser vazio");
       isNameValid = false;
     } else {
       $("#name").removeClass("border-red-500");
@@ -23,9 +31,12 @@ $(document).ready(function () {
       isNameValid = true;
     }
 
-    if (rating < 0 || rating > 10) {
+    // Validate rating
+    if (rating === "" || !ratingRegex.test(rating)) {
       $("#rating").addClass("border-red-500");
-      $("#rating_error").removeClass("invisible");
+      $("#rating_error")
+        .removeClass("invisible")
+        .text("Insira uma nota válida (0 to 10)");
       isRatingValid = false;
     } else {
       $("#rating").removeClass("border-red-500");
@@ -33,9 +44,12 @@ $(document).ready(function () {
       isRatingValid = true;
     }
 
-    if (description === "") {
+    // Validate description
+    if (description === "" || !descriptionRegex.test(description)) {
       $("#description").addClass("border-red-500");
-      $("#description_error").removeClass("invisible");
+      $("#description_error")
+        .removeClass("invisible")
+        .text("O campo descrição não pode ser vazio");
       isDescriptionValid = false;
     } else {
       $("#description").removeClass("border-red-500");
@@ -56,7 +70,7 @@ $(document).ready(function () {
         data: JSON.stringify({ name, description, rating }),
         success: function (response) {
           window.location.replace("lista_filmes.html");
-        }
+        },
       });
     }
 

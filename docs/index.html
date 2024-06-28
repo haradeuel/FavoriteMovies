@@ -50,13 +50,12 @@
               <input
                 id="name"
                 type="text"
-                class="border border-gray-400 rounded-sm p-2 border focus:border-yellow-600 focus:outline-none focus:border-4"
+                class="border border-gray-400 rounded-sm p-2 focus:border-yellow-600 focus:outline-none focus:border-4"
                 placeholder="Nome do filme"
+                pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]*"
+                title="Please enter a valid name using letters and spaces only"
+                required
               />
-
-              <span id="name_error" class="invisible text-red-600 text-sm">
-                O Nome é obrigatório.
-              </span>
             </div>
 
             <div class="flex flex-col gap-2">
@@ -66,7 +65,7 @@
                 id="rating"
                 type="number"
                 value="0"
-                class="border border-gray-400 rounded-sm p-2 border focus:border-yellow-600 focus:outline-none focus:border-4"
+                class="border border-gray-400 rounded-sm p-2 focus:border-yellow-600 focus:outline-none focus:border-4"
               />
 
               <span id="rating_error" class="invisible text-red-600 text-sm">
@@ -79,7 +78,7 @@
 
               <textarea
                 id="description"
-                class="border border-gray-400 rounded-sm px-2 h-40 border focus:border-yellow-600 focus:outline-none focus:border-4"
+                class="border border-gray-400 rounded-sm px-2 h-40 focus:border-yellow-600 focus:outline-none focus:border-4"
                 placeholder="Descrição do filme"
               ></textarea>
 
