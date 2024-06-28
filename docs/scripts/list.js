@@ -50,6 +50,7 @@ $(document).ready(function () {
           url: `https://66776a33145714a1bd74af8c.mockapi.io/movie/movie/${movie.id}`,
           success: function () {
             $(`#remove-${movie.id}`).closest('.max-w-sm').remove(); // Remove the movie element from the DOM
+            
           },
           error: function () {
             alert('Erro ao remover o filme');
