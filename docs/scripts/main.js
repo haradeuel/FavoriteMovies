@@ -2,12 +2,23 @@ $(document).ready(function () {
   // Hide address form initially
   $("#address-form").addClass("hidden");
 
+  // Check local storage for saved address
+  const savedAddress = JSON.parse(localStorage.getItem("address"));
+  if (savedAddress) {
+    $("#cep").val(savedAddress.cep);
+    $("#logradouro").val(savedAddress.logradouro);
+    $("#localidade").val(savedAddress.localidade);
+    $("#address-form").removeClass("hidden");
+    $("#receber-cartas").prop("checked", true);
+  }
+
   // Handle checkbox change event
   $("#receber-cartas").on("change", function () {
     if ($(this).is(":checked")) {
-      $("#address-form").removeClass("hidden");
+      $("#address-form").fadeIn().removeClass("hidden");
     } else {
-      $("#address-form").addClass("hidden");
+      $("#address-form").fadeOut().addClass("hidden");
+      localStorage.removeItem("address");
     }
   });
 
@@ -22,6 +33,13 @@ $(document).ready(function () {
       if (!("erro" in data)) {
         $("#logradouro").val(data.logradouro);
         $("#localidade").val(data.localidade);
+        // Save address to local storage
+        const address = {
+          cep: $("#cep").val(),
+          logradouro: data.logradouro,
+          localidade: data.localidade,
+        };
+        localStorage.setItem("address", JSON.stringify(address));
       } else {
         alert("CEP não encontrado.");
       }
@@ -46,9 +64,9 @@ $(document).ready(function () {
     const rating = $("#rating").val();
 
     // Regex patterns for validation
-    const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/; // Allows letters and spaces
-    const ratingRegex = /^(?:10|\d(?:\.\d)?)$/; // Allows ratings from 0 to 10 with optional decimal
-    const descriptionRegex = /.+/; // Allows any non-empty description
+    const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
+    const ratingRegex = /^(?:10|\d(?:\.\d)?)$/;
+    const descriptionRegex = /.+/;
 
     // Validate name
     if (name === "" || !nameRegex.test(name)) {
